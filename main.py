@@ -10,15 +10,15 @@ YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 20
+LONG_BREAK_MIN = 1
 reps = 0
-timer = None
+timer_clock = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
 
 def reset_timer():
-    window.after_cancel(timer)
+    window.after_cancel(timer_clock)
     canvas.itemconfig(timer_text, text="00:00")
     title_label.config(text="Timer")
     check_marks.config(text="")
@@ -57,8 +57,8 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        global timer
-        timer = window.after(1000, count_down, count - 1)
+        global timer_clock
+        timer_clock = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         marks = ""
