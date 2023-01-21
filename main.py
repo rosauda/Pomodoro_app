@@ -10,7 +10,7 @@ YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 1
+LONG_BREAK_MIN = 20
 reps = 0
 timer_clock = None
 
